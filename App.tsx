@@ -6,6 +6,8 @@ import { useFonts } from 'expo-font';
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 
+import { AppBackground } from '@components/AppBackground';
+
 import { SignIn } from '@screens/SignIn';
 
 export default function App() {
@@ -21,9 +23,9 @@ export default function App() {
   }
 
   return (
-    <>
+    <AppBackground>
       <StatusBar style="light" translucent />
       <SignIn />
-    </>
+    </AppBackground>
   );
 }
