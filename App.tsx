@@ -6,9 +6,9 @@ import { useFonts } from 'expo-font';
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 
-import { AppBackground } from '@components/AppBackground';
+import { Routes } from '@routes/index';
 
-import { Home } from '@screens/Home';
+import { AppBackground } from '@components/AppBackground';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -25,7 +25,8 @@ export default function App() {
   return (
     <AppBackground>
       <StatusBar style="light" translucent />
-      <Home />
+
+      <Routes />
     </AppBackground>
   );
 }
