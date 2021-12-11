@@ -28,6 +28,7 @@
           "/^@utils/",
           "/^@components/",
           "/^@screens/",
+          "/^@assets/",
           [
             "parent",
             "sibling",
@@ -61,6 +62,10 @@
           ".js"
         ],
         "map": [
+          [
+            "@assets",
+            "./src/assets"
+          ],
           [
             "@components",
             "./src/components"
