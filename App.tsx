@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { SignIn } from './src/screens/SignIn';
+import { SignIn } from '@screens/SignIn';
 
 export default function App() {
   return <SignIn />;

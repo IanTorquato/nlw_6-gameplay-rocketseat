@@ -1,0 +1,84 @@
+{
+  "extends": [
+    "airbnb-base",
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:import/typescript",
+    "plugin:prettier/recommended"
+  ],
+  "plugins": [
+    "eslint-plugin-import-helpers"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "allowImportExportEverywhere": true
+  },
+  "rules": {
+    "@typescript-eslint/indent": [
+      "error",
+      2
+    ],
+    "import-helpers/order-imports": [
+      "warn",
+      {
+        "newlinesBetween": "always",
+        "groups": [
+          "module",
+          "/^@routes/",
+          "/^@utils/",
+          "/^@components/",
+          "/^@screens/",
+          [
+            "parent",
+            "sibling",
+            "index"
+          ]
+        ],
+        "alphabetize": {
+          "order": "asc",
+          "ignoreCase": true
+        }
+      }
+    ],
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "ts": "never",
+        "tsx": "never"
+      }
+    ],
+    "import/prefer-default-export": "off",
+    "no-console": "off",
+    "prettier/prettier": "error"
+  },
+  "settings": {
+    "import/resolver": {
+      "alias": {
+        "extensions": [
+          ".ts",
+          ".tsx",
+          ".js"
+        ],
+        "map": [
+          [
+            "@components",
+            "./src/components"
+          ],
+          [
+            "@routes",
+            "./src/routes"
+          ],
+          [
+            "@screens",
+            "./src/screens"
+          ],
+          [
+            "@utils",
+            "./src/utils"
+          ]
+        ]
+      }
+    }
+  }
+}
