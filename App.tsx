@@ -8,7 +8,7 @@ import React from 'react';
 
 import { AppBackground } from '@components/AppBackground';
 
-import { SignIn } from '@screens/SignIn';
+import { Home } from '@screens/Home';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -25,7 +25,7 @@ export default function App() {
   return (
     <AppBackground>
       <StatusBar style="light" translucent />
-      <SignIn />
+      <Home />
     </AppBackground>
   );
 }
