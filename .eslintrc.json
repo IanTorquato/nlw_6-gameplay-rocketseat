@@ -25,6 +25,7 @@
         "groups": [
           "module",
           "/^@routes/",
+          "/^@global/",
           "/^@utils/",
           "/^@components/",
           "/^@screens/",
@@ -69,6 +70,10 @@
           [
             "@components",
             "./src/components"
+          ],
+          [
+            "@global",
+            "./src/global"
           ],
           [
             "@routes",

@@ -1,9 +1,11 @@
 import { StyleSheet } from 'react-native';
 
+import { theme } from '@global/styles/theme';
+
 export const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
-    backgroundColor: '#e51c44',
+    backgroundColor: theme.colors.primary,
     borderRadius: 8,
     flexDirection: 'row',
     height: 56,
@@ -11,7 +13,7 @@ export const styles = StyleSheet.create({
   },
   iconWrapper: {
     alignItems: 'center',
-    borderColor: '#991f36',
+    borderColor: theme.colors.line,
     borderRightWidth: 1,
     justifyContent: 'center',
     height: 56,
@@ -22,7 +24,7 @@ export const styles = StyleSheet.create({
     width: 24,
   },
   title: {
-    color: '#dde3f0',
+    color: theme.colors.heading,
     flex: 1,
     fontSize: 16,
     textAlign: 'center',

@@ -1,9 +1,11 @@
 import { StyleSheet } from 'react-native';
 
+import { theme } from '@global/styles/theme';
+
 export const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
-    backgroundColor: '#0d133d',
+    backgroundColor: theme.colors.secondary90,
     flex: 1,
     justifyContent: 'center',
   },
@@ -16,13 +18,13 @@ export const styles = StyleSheet.create({
     paddingHorizontal: 48,
   },
   title: {
-    color: '#dde3f0',
+    color: theme.colors.heading,
     fontSize: 40,
     marginBottom: 16,
     textAlign: 'center',
   },
   subtitle: {
-    color: '#dde3f0',
+    color: theme.colors.heading,
     fontSize: 16,
     marginBottom: 64,
     textAlign: 'center',
