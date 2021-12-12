@@ -44,6 +44,11 @@ export function Home() {
 
   const { navigate } = useNavigation();
 
+  function handleAppointmentCreate() {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    navigate('AppointmentCreate' as any);
+  }
+
   function handleCategorySelect(categoryId: number) {
     if (categoryId === categorySelected) {
       setCategorySelected(0);
@@ -62,7 +67,7 @@ export function Home() {
       <View style={styles.header}>
         <Profile />
 
-        <ButtonAdd />
+        <ButtonAdd onPress={handleAppointmentCreate} />
       </View>
 
       <CategorySelect categorySelected={categorySelected} selectCategory={handleCategorySelect} />
