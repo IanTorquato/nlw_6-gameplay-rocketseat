@@ -9,6 +9,6 @@ export const styles = StyleSheet.create({
     height: 1,
     marginBottom: 32,
     marginTop: 2,
-    width: '78%',
+    width: '72%',
   },
 });

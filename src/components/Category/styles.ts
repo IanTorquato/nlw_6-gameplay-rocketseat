@@ -44,5 +44,6 @@ export const styles = StyleSheet.create({
     color: theme.colors.heading,
     fontFamily: theme.fonts.titleBold,
     fontSize: 16,
+    marginTop: 12,
   },
 });

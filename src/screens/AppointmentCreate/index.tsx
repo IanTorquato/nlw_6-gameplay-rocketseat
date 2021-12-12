@@ -9,14 +9,21 @@ import { theme } from '@global/styles/theme';
 import { AppBackground } from '@components/AppBackground';
 import { Button } from '@components/Button';
 import { CategorySelect } from '@components/CategorySelect';
+import { GuildProps } from '@components/Guild';
+import { GuildIcon } from '@components/GuildIcon';
 import { Header } from '@components/Header';
+import { ModalView } from '@components/ModalView';
 import { SmallInput } from '@components/SmallInput';
 import { TextArea } from '@components/TextArea';
+
+import { Guilds } from '@screens/Guilds';
 
 import { styles } from './styles';
 
 export function AppointmentCreate() {
   const [categorySelected, setCategorySelected] = useState(0);
+  const [openGuildsModal, setOpenGuildsModal] = useState(false);
+  const [guild, setGuild] = useState<GuildProps>();
 
   function handleCategorySelect(categoryId: number) {
     if (categoryId === categorySelected) {
@@ -24,6 +31,15 @@ export function AppointmentCreate() {
     } else {
       setCategorySelected(categoryId);
     }
+  }
+
+  function handleOpenGuildsModal() {
+    setOpenGuildsModal(true);
+  }
+
+  function handleGuildSelect(guildSelect: GuildProps) {
+    setGuild(guildSelect);
+    setOpenGuildsModal(false);
   }
 
   return (
@@ -37,12 +53,12 @@ export function AppointmentCreate() {
           <CategorySelect categorySelected={categorySelected} selectCategory={handleCategorySelect} hasCheckBox />
 
           <View style={styles.form}>
-            <RectButton>
+            <RectButton onPress={handleOpenGuildsModal}>
               <View style={styles.select}>
-                <View style={styles.image} />
+                {guild?.icon ? <GuildIcon /> : <View style={styles.image} />}
 
                 <View style={styles.selectBody}>
-                  <Text style={styles.label}>Selecione um servidor</Text>
+                  <Text style={styles.label}>{guild ? guild.name : 'Selecione um servidor'}</Text>
                 </View>
 
                 <Feather name="chevron-right" color={theme.colors.heading} size={18} />
@@ -89,6 +105,10 @@ export function AppointmentCreate() {
           </View>
         </AppBackground>
       </ScrollView>
+
+      <ModalView visible={openGuildsModal}>
+        <Guilds handleGuildSelect={handleGuildSelect} />
+      </ModalView>
     </KeyboardAvoidingView>
   );
 }
