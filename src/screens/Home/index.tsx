@@ -1,3 +1,4 @@
+import { useNavigation } from '@react-navigation/native';
 import React, { useState } from 'react';
 import { FlatList, View } from 'react-native';
 
@@ -41,12 +42,19 @@ const appointments = [
 export function Home() {
   const [categorySelected, setCategorySelected] = useState(0);
 
+  const { navigate } = useNavigation();
+
   function handleCategorySelect(categoryId: number) {
     if (categoryId === categorySelected) {
       setCategorySelected(0);
     } else {
       setCategorySelected(categoryId);
     }
+  }
+
+  function handleAppointmentDetails() {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    navigate('AppointmentDetails' as any);
   }
 
   return (
@@ -67,7 +75,7 @@ export function Home() {
           data={appointments}
           keyExtractor={(item) => `${item.id}`}
           ItemSeparatorComponent={ListDivider}
-          renderItem={({ item }) => <Appointment data={item} />}
+          renderItem={({ item }) => <Appointment data={item} onPress={handleAppointmentDetails} />}
           showsVerticalScrollIndicator={false}
         />
       </View>
