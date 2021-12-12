@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { FlatList, View } from 'react-native';
 
+import { AppBackground } from '@components/AppBackground';
 import { Appointment } from '@components/Appointment';
 import { ButtonAdd } from '@components/ButtonAdd';
 import { CategorySelect } from '@components/CategorySelect';
@@ -49,7 +50,7 @@ export function Home() {
   }
 
   return (
-    <View style={styles.container}>
+    <AppBackground>
       <View style={styles.header}>
         <Profile />
 
@@ -70,6 +71,6 @@ export function Home() {
           showsVerticalScrollIndicator={false}
         />
       </View>
-    </View>
+    </AppBackground>
   );
 }
