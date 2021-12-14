@@ -26,15 +26,15 @@ export function AppointmentCreate() {
   const [guild, setGuild] = useState<GuildProps>();
 
   function handleCategorySelect(categoryId: number) {
-    if (categoryId === categorySelected) {
-      setCategorySelected(0);
-    } else {
-      setCategorySelected(categoryId);
-    }
+    setCategorySelected(categoryId);
   }
 
   function handleOpenGuildsModal() {
     setOpenGuildsModal(true);
+  }
+
+  function handleCloseGuildsModal() {
+    setOpenGuildsModal(false);
   }
 
   function handleGuildSelect(guildSelect: GuildProps) {
@@ -67,7 +67,7 @@ export function AppointmentCreate() {
 
             <View style={styles.field}>
               <View>
-                <Text style={styles.label}>Dia e mês</Text>
+                <Text style={[styles.label, { marginBottom: 8 }]}>Dia e mês</Text>
 
                 <View style={styles.column}>
                   <SmallInput maxLength={2} />
@@ -79,7 +79,7 @@ export function AppointmentCreate() {
               </View>
 
               <View>
-                <Text style={styles.label}>Hora e minuto</Text>
+                <Text style={[styles.label, { marginBottom: 8 }]}>Hora e minuto</Text>
 
                 <View style={styles.column}>
                   <SmallInput maxLength={2} />
@@ -106,7 +106,7 @@ export function AppointmentCreate() {
         </AppBackground>
       </ScrollView>
 
-      <ModalView visible={openGuildsModal}>
+      <ModalView visible={openGuildsModal} close={handleCloseGuildsModal}>
         <Guilds handleGuildSelect={handleGuildSelect} />
       </ModalView>
     </KeyboardAvoidingView>

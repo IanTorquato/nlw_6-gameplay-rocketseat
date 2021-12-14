@@ -6,7 +6,6 @@ import { theme } from '@global/styles/theme';
 export const styles = StyleSheet.create({
   banner: {
     height: 232,
-    marginBottom: 32,
     width: '100%',
   },
   bannerContent: {
@@ -23,7 +22,8 @@ export const styles = StyleSheet.create({
   subtitle: {
     color: theme.colors.heading,
     fontFamily: theme.fonts.textRegular,
-    fontSize: 14,
+    fontSize: 13,
+    lineHeight: 20,
   },
   members: {
     marginLeft: 24,
