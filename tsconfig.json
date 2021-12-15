@@ -12,6 +12,12 @@
       "@components/*": [
         "./src/components/*"
       ],
+      "@configs/*": [
+        "./src/configs/*"
+      ],
+      "@contexts/*": [
+        "./src/contexts/*"
+      ],
       "@global/*": [
         "./src/global/*"
       ],
@@ -20,6 +26,9 @@
       ],
       "@screens/*": [
         "./src/screens/*"
+      ],
+      "@services/*": [
+        "./src/services/*"
       ],
       "@utils/*": [
         "./src/utils/*"

@@ -5,10 +5,13 @@ import AppLoading from 'expo-app-loading';
 import { useFonts } from 'expo-font';
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
+import { LogBox } from 'react-native';
 
 import { Routes } from '@routes/index';
 
 import { AppBackground } from '@components/AppBackground';
+
+LogBox.ignoreLogs(['You are not currently signed in to Expo on your development machine.']);
 
 export default function App() {
   const [fontsLoaded] = useFonts({

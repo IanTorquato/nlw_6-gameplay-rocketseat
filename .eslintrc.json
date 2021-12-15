@@ -26,7 +26,12 @@
           "module",
           "/^@routes/",
           "/^@global/",
-          "/^@utils/",
+          [
+            "/^@configs/",
+            "/^@utils/",
+            "/^@services/"
+          ],
+          "/^@contexts/",
           "/^@components/",
           "/^@screens/",
           "/^@assets/",
@@ -72,6 +77,14 @@
             "./src/components"
           ],
           [
+            "@configs",
+            "./src/configs"
+          ],
+          [
+            "@contexts",
+            "./src/contexts"
+          ],
+          [
             "@global",
             "./src/global"
           ],
@@ -82,6 +95,10 @@
           [
             "@screens",
             "./src/screens"
+          ],
+          [
+            "@services",
+            "./src/services"
           ],
           [
             "@utils",

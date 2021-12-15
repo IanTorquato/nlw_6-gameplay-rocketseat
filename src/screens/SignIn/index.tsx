@@ -1,6 +1,7 @@
-import { useNavigation } from '@react-navigation/native';
 import React from 'react';
-import { Image, Text, View } from 'react-native';
+import { Alert, Image, Text, View } from 'react-native';
+
+import { useAuth } from '@contexts/Auth';
 
 import { AppBackground } from '@components/AppBackground';
 import { ButtonIcon } from '@components/ButtonIcon';
@@ -10,11 +11,14 @@ import IllustrationImg from '@assets/illustration.png';
 import { styles } from './styles';
 
 export function SignIn() {
-  const { navigate } = useNavigation();
+  const { signIn } = useAuth();
 
-  function handleSignIn() {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    navigate('Home' as any);
+  async function handleSignIn() {
+    try {
+      await signIn();
+    } catch (error) {
+      Alert.alert(error as string);
+    }
   }
 
   return (
